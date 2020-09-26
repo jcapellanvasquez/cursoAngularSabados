@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-mi-primer-componente',
@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mi-primer-componente.component.css']
 })
 export class MiPrimerComponenteComponent implements OnInit {
+  public nombre: string = 'Julio J. Capellan';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
+  public getFormatedName() {
+    return 'Ing. ' + this.nombre;
+  }
+
+  public getFormatedNameByParam(honorifico: string) {
+    //Utilizando interpolacion de string con backtrip
+    return `${honorifico} ${this.nombre}`;
+  }
+
+
 
 }
