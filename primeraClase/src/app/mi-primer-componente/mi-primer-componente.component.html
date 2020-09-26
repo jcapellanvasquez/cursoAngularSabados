@@ -4,7 +4,12 @@
 
 <h4>Nombre</h4>
 <p>
-  {{getFormatedName()}}
+  {{nombre}}
+</p>
+
+<h4>Bio:</h4>
+<p>
+  {{bio}}
 </p>
 
 <h4>Nombre con honorifico</h4>
@@ -12,3 +17,13 @@
   {{getFormatedNameByParam('Sr.')}}
 </p>
 
+<hr>
+
+<h1>
+  Dime tu nombre? <input type="text" [(ngModel)]="nombreEnTextbox">
+</h1>
+
+<h4>Nombre</h4>
+<p>
+  {{nombreEnTextbox}}
+</p>

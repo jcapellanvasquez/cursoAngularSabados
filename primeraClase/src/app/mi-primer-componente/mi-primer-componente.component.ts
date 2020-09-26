@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MiPrimerComponenteComponent implements OnInit {
   public nombre: string = 'Julio J. Capellan';
+  public bio: string  = "Desarrollador web";
+  public nombreEnTextbox: string = "";
 
   constructor() {
   }

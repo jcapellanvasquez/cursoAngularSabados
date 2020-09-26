@@ -1,0 +1,21 @@
+<hr>
+<h1>Directivas estructurales -  uso del *ngIf</h1>
+
+<h1>
+  Dime tu nombre? <input type="text" [(ngModel)]="nombreEnTextbox">
+</h1>
+
+<div *ngIf="nombreEnTextbox">
+  <h4>Nombre</h4>
+  <p>
+    {{nombreEnTextbox}}
+  </p>
+</div>
+
+<ul>
+  <li *ngFor="let nombre of nombres">
+    {{nombre}}
+  </li>
+</ul>
+
+
