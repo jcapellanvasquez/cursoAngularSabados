@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-directivas-structurales',
@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
     './directivas-structurales.component.css',
   ]
 })
-export class DirectivasStructuralesComponent implements OnInit {
+export class DirectivasStructuralesComponent implements OnInit, OnChanges {
   public nombreEnTextbox: string = '';
   public nombres: any[] = [
     'Julio',
@@ -16,11 +16,26 @@ export class DirectivasStructuralesComponent implements OnInit {
     'Juan'
   ];
 
+  public nuevoNombre: string = '';
+
   constructor() {
 
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+    console.log('ngOnInit');
   }
 
+  public agregarNombre() {
+    this.nombres.push(this.nuevoNombre);
+    this.nuevoNombre = '';
+  }
+
+  public alertarNombre(nombre: string) {
+    alert(nombre);
+  }
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 }

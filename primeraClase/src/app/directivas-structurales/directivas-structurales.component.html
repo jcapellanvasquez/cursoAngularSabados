@@ -1,5 +1,5 @@
 <hr>
-<h1>Directivas estructurales -  uso del *ngIf</h1>
+<h1>Directivas estructurales - uso del *ngIf</h1>
 
 <h1>
   Dime tu nombre? <input type="text" [(ngModel)]="nombreEnTextbox">
@@ -17,5 +17,17 @@
     {{nombre}}
   </li>
 </ul>
+
+<h1>
+  Agregar un nombre a la lista <input (keydown.enter)="agregarNombre()" type="text" [(ngModel)]="nuevoNombre">
+</h1>
+
+<ul>
+  <li *ngFor="let nombre of nombres" (click)="alertarNombre(nombre)">
+    {{nombre}}
+  </li>
+</ul>
+
+
 
 
