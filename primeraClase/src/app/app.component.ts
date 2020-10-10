@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'primeraClase';
 
   public puesto: string = 'Profesor';
+
+  public escucharEvento(nombre: string) {
+    alert(nombre);
+  }
 }

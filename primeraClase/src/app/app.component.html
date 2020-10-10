@@ -1,18 +1,16 @@
-<!--<app-mi-primer-componente></app-mi-primer-componente>-->
-<!--<app-directivas-structurales></app-directivas-structurales>-->
-
-<!--Hijo-->
-<app-presentacion [nombre]="'Jose'" [puesto]="this.puesto" >
-  <h1>Titulo</h1>
-  <p>Mi Presentacion</p>
-</app-presentacion>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/mi-formulario">Mi primer formulario</a>
+      </li>
+    </ul>
   </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
