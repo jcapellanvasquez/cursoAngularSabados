@@ -24,7 +24,8 @@ import {MiFormularioComponent} from './mi-formulario/mi-formulario.component';
     RouterModule.forRoot([
       {path: '', component: PresentacionComponent},
       {path: 'mi-formulario', component: MiFormularioComponent},
-      {path: 'pipe', loadChildren: './pipe-ejemplo/pipe-ejemplo.module#PipeEjemploModule'}
+      {path: 'pipe', loadChildren: './pipe-ejemplo/pipe-ejemplo.module#PipeEjemploModule'},
+      {path: 'login', loadChildren: './authenticate/authenticate.module#AuthenticateModule'},
     ]),
   ],
   providers: [],
