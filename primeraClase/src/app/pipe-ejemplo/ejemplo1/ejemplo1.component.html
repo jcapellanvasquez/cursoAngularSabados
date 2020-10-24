@@ -1,0 +1,40 @@
+<div class="list-group mt-5">
+  <div class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Ejemplo de uso del JSON Pipe</h5>
+    </div>
+    <p class="mb-1">
+      {{this.objeto | json}}
+    </p>
+  </div>
+  <div class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Ejemplo de uso del Date Pipe</h5>
+    </div>
+    <p class="mb-1">
+      {{this.objeto.fechaInicial | date:'dd/MM/yyyy HH:mm:ss a'}}
+    </p>
+  </div>
+  <div class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Ejemplo de uso del Date Pipe</h5>
+    </div>
+    <p class="mb-1">
+      {{this.objeto.sueldo | currency:'DOP'}}
+    </p>
+  </div>
+  <div class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Ejemplo de uso del Mayus y min Pipe</h5>
+    </div>
+    <p>Upper Case {{this.objeto.nombre | uppercase}}</p>
+    <p>Lower Case{{this.objeto.apellido | lowercase}}</p>
+    <p>Titulo {{this.objeto.nombre + ' ' + this.objeto.apellido | titlecase}}</p>
+  </div>
+  <div class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Ejemplo de uso del custom Pipe</h5>
+    </div>
+    <p>Texto Cortado {{this.objeto.bio | cutText:30}}</p>
+  </div>
+</div>

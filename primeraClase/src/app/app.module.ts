@@ -8,6 +8,7 @@ import {PresentacionComponent} from './presentacion/presentacion.component';
 import {RouterModule} from '@angular/router';
 import {MiFormularioComponent} from './mi-formulario/mi-formulario.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +23,9 @@ import {MiFormularioComponent} from './mi-formulario/mi-formulario.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component: PresentacionComponent},
-      {path: 'mi-formulario', component: MiFormularioComponent}
-    ])
+      {path: 'mi-formulario', component: MiFormularioComponent},
+      {path: 'pipe', loadChildren: './pipe-ejemplo/pipe-ejemplo.module#PipeEjemploModule'}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
