@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {LoginService} from './authenticate/login.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,14 @@ export class AppComponent {
 
   public puesto: string = 'Profesor';
 
+  constructor(public loginService: LoginService) {
+  }
+
   public escucharEvento(nombre: string) {
     alert(nombre);
+  }
+
+  public logout() {
+    this.loginService.logout();
   }
 }

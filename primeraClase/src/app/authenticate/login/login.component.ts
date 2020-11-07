@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {auth} from 'firebase/app';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +14,25 @@ import {auth} from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
   public form: FormGroup;
+  public user$: Observable<any>;
   constructor(public loginService: LoginService,
               private formBuilder: FormBuilder,
               private router: Router,
-              private auth: AngularFireAuth
+              private authService: AngularFireAuth
   ) {
     this.form = this.formBuilder.group({
       username:[''],
       password: ['']
     });
+
+    this.user$ = this.authService.authState
   }
 
   ngOnInit() {
+
+    if (this.user$) {
+      this.user$.subscribe(console.log)
+    }
 
   }
 
@@ -41,7 +49,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithGoogle() {
-    this.auth.auth.signInWithPopup(new auth.GoogleAuthProvider())
+    this.authService.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
 }

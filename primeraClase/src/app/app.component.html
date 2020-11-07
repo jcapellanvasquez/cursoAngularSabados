@@ -19,6 +19,10 @@
       </li>
     </ul>
   </div>
+<!--  <button (click)="this.logout()" class="btn btn-secondary">Cerrar sesion</button>-->
+  <div (click)="this.logout()" *ngIf="(this.loginService.authService.authState | async) as user">
+    <img class="avatar" [src]="user.photoURL " alt="avatar">
+  </div>
 </nav>
 <div class="container">
   <router-outlet></router-outlet>
