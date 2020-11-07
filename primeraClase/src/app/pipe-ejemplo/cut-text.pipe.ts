@@ -8,7 +8,6 @@ export class CutTextPipe implements PipeTransform {
 
   // Pipe para cortar los textos cuando sean de cierto tamano
   transform(value: any, args?: any, p?: any): any {
-    console.log(args);
     this.defaultLength = args ? args : this.defaultLength;
     return value.toString().length > this.defaultLength ? value.toString().substr(0, this.defaultLength) + '...' : value;
   }
