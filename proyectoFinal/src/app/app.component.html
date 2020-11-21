@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
 
 <p-card>
-  Content
+  <p-calendar (onSelect)="log($event)" [(ngModel)]="fecha"></p-calendar>
 </p-card>

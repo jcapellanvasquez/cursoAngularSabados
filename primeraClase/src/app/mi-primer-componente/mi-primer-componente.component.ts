@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-mi-primer-componente',
@@ -10,7 +11,8 @@ export class MiPrimerComponenteComponent implements OnInit {
   public bio: string  = "Desarrollador web";
   public nombreEnTextbox: string = "";
 
-  constructor() {
+  constructor(private activeRoute: ActivatedRoute) {
+
   }
 
   ngOnInit() {

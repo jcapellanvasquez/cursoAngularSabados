@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MyValidators} from '../my-validators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-mi-formulario',
@@ -22,12 +23,16 @@ export class MiFormularioComponent implements OnInit {
   }, {validators: MyValidators.samePassword()});
 
 
-  constructor() {
+  constructor(private routerActive: ActivatedRoute) {
     // este metodo nos ayuda agregar nuevos controls a un FormGroup existente
-    //this.form.addControl('emailControl', this.emailControl);
+    //this.form.addControl('emailControl', th is.emailControl);
   }
 
   ngOnInit() {
+    this.routerActive.params.subscribe( params => {
+      console.log(params.nombre);
+      this.nombreControl.patchValue(params.nombre)
+    })
   }
 
   public save() {

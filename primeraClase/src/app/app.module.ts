@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {LoginGuard} from './guards/login.guard';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: PresentacionComponent},
+      {path: '', component: PresentacionComponent, canActivate:[LoginGuard]},
       {path: 'mi-formulario', component: MiFormularioComponent},
+      {path: 'mi-formulario/:nombre', component: MiFormularioComponent},
       {path: 'pipe', loadChildren: './pipe-ejemplo/pipe-ejemplo.module#PipeEjemploModule'},
-      {path: 'login', loadChildren: './authenticate/authenticate.module#AuthenticateModule'},
+      {path: 'login', loadChildren: './authenticate/authenticate.module#AuthenticateModule', canActivate:[LoginGuard]},
       {path: 'ejemplos-servicios', loadChildren: './ejemplos-servicios/ejemplos-servicios.module#EjemplosServiciosModule'},
-    ]),
+    ], {enableTracing: false}),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
